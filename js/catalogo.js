@@ -1,7 +1,7 @@
 import { getData } from "./modules/productosAPI.js"
 
 const createProduct = (productObject)=>{
-    let {categoria,nombre,precio,stock,imagen} = productObject
+    let {categoria,nombre,precio,stock,imagen,key} = productObject
 
     let container =  document.createElement('div')
     container.classList.add('card','col-3')
@@ -28,11 +28,20 @@ const createProduct = (productObject)=>{
     let buttonText = document.createTextNode('Agregar al carrito')
     button.append(buttonText)
 
+    //Agregar al carrito
+    button.addEventListener('click',(event)=>{
+        
+    })
+
     let button1 = document.createElement('a')
     button1.setAttribute('href',"#")
     button1.classList.add('btn','btn-success','btns')
     let button1Text = document.createTextNode('Ver detalle')
     button1.append(button1Text)
+    //crea la instancia por producto
+    button1.addEventListener('click',(event)=>{
+        window.open(`../views/detalle.html?productKey=${key}`, "_self")
+    })
 
     container1.append(title,paragraph,button,button1)
     container.append(img,container1)
@@ -56,5 +65,12 @@ const printProducts = async()=>{
     createProductWrapper(productsArray,'wrapper')
     console.log(productsArray)
 }
+
+let cerrar = document.getElementById('cerrar')
+
+cerrar.addEventListener('click',(event)=>{
+    //console.log('click')
+    localStorage.removeItem('user')
+})
 
 printProducts()

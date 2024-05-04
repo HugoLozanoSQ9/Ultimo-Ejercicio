@@ -7,3 +7,11 @@
     width: 100%;
     margin-bottom: 1rem;
 }
+.logOut{
+    margin-left: 1rem;
+}
+.images1{
+    width: 100%;
+    height: 400px;
+    object-fit: cover
+}
