@@ -15,7 +15,6 @@ const printProductData = async (productKey)=>{
     let {categoria, descrption,imagen,nombre,precio,stock} = productData
 
     document.getElementById('name').append(nombre)
-    document.getElementById('descrip').append(descrption)
     document.getElementById('stock').append(stock)
     document.getElementById('price').append(precio)
     document.getElementById('descrip').append(descrption)
